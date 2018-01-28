@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block navbar %}{% endblock %}
+{% block app_content %}
+    <section class="resume-section p-3 d-flex d-column">
+        <div class="my-auto">
+            <h1 class="mb-0">Application
+                <span class="text-primary">Error</span>
+            </h1>
+            <p>The administrator has been notified. Sorry for the inconvenience!</p>
+            <p>Return to <a href="{{ url_for('main.index') }}">Home</a> page.</p>
+        </div>
+    </section>
+{% endblock %}
