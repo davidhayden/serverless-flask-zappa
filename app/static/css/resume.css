@@ -145,3 +145,13 @@ a {
 a:hover, a:focus, a:active {
   color: #824027;
 }
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #BD5D38 !important;
+  border-color: #bb6841 !important;
+}
+
+.btn-primary:focus{
+  outline:0 !important;
+  box-shadow:none !important
+}
