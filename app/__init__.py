@@ -12,6 +12,9 @@ login.login_view = 'auth.login'
 from app.auth import bp as auth_bp
 app.register_blueprint(auth_bp)
 
+from app.dashboard import bp as dash_bp
+app.register_blueprint(dash_bp)
+
 from app.errors import bp as errors_bp
 app.register_blueprint(errors_bp)
 
