@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block navbar %}{% endblock %}
+{% block app_content %}
+    <section class="resume-section p-3 d-flex d-column">
+        <div class="my-auto">
+            <h1 class="mb-0">
+                <span class="text-primary">Login</span>
+            </h1>
+            <form action="" method="post" name="login">
+                {{ form.hidden_tag() }}
+                <p>
+                    {{ form.username.label }}<br>
+                    {{ form.username(size=32) }}
+                    {% for error in form.username.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.password.label }}<br>
+                    {{ form.password(size=32) }}
+                    {% for error in form.password.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+                <p>{{ form.submit() }}</p>
+            </form>
+        </div>
+    </section>
+{% endblock %}
