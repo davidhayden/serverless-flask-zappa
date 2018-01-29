@@ -1,4 +1,4 @@
-from flask import flash, redirect, render_template, url_for
+from flask import flash, redirect, render_template, request, url_for
 from flask_login import current_user, login_user, logout_user
 from app.auth import bp
 from app.auth.forms import LoginForm
@@ -19,7 +19,12 @@ def login():
         
         user = load_user(1)
         login_user(user, remember=form.remember_me.data)
-        return redirect(url_for('main.index'))
+
+        next_page = request.args.get('next')
+        if not next_page or not next_page.startswith('/'):
+            next_page = url_for('main.index')
+
+        return redirect(next_page)
 
     return render_template('auth/login.html', form=form)
 
